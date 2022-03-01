@@ -3,8 +3,8 @@ import Box from '@mui/material/Box';
 import CellItem from "../CellItem";
 import produce from "immer";
 
-const numRows = 30;
-const numCols = 20;
+let numRows = 30;
+let numCols = 20;
 
 const operations = [
     [0, 1],
@@ -35,6 +35,11 @@ const createEmptyGrid = () => {
 };
 
 const CellGrid = () => {
+    const { innerWidth: width, innerHeight: height } = window;
+
+    if (width < 1080 && height < 1980  ) {
+        numRows = 20
+    }
     const [grid, setGrid] = useState(() => {
         return createEmptyGrid();
     });
