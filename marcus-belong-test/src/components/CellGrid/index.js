@@ -35,9 +35,9 @@ const createEmptyGrid = () => {
 };
 
 const CellGrid = () => {
-    const { innerWidth: width, innerHeight: height } = window;
+    const { innerHeight: height } = window;
 
-    if (width < 1080 && height < 1980  ) {
+    if (height < 1080  ) {
         numRows = 20
     }
     const [grid, setGrid] = useState(() => {
@@ -80,7 +80,7 @@ const CellGrid = () => {
     let gridTemplateColumns = `repeat(${numCols}, 20px)`;
 
     return (
-        <div className={'flex h-full'}>
+        <div className={'flex h-full w-full justify-center'}>
             <Box className={'flex justify-center m-4 align-middle items-center'}>
                 <button className={'bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow'}
                         onClick={() => {
