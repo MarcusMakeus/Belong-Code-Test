@@ -1,11 +1,8 @@
-
-import './App.css';
+import "./App.css";
 import CellPage from "./pages/CellPage";
 
 function App() {
-  return (
-    <CellPage />
-  );
+  return <CellPage />;
 }
 
 export default App;
